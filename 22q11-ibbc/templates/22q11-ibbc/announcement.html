@@ -1,0 +1,92 @@
+{% extends "base_arcana.html" %}
+
+{% block title %}22q11-ibbc.org | Announcements{% endblock title %}
+
+{% load staticfiles%}
+
+<!-- CONTENT -->
+{% block content %}
+<section class="wrapper style1">
+    <div class="container">
+        <div class="row 200%">
+            <div class="8u 12u(narrower)">
+                <div id="content">
+
+                    <article>
+
+                        <header>
+                            <h2>Announcements</h2>
+                        </header>
+
+                        <a name="201511"></a>
+                        <h3>NOVEMBER 23, 2015</h3>
+                        <p>Added 229 new subjects to genomic database.</p>
+
+                        <h3>NOVEMBER 06, 2015</h3>
+                        <p>Added 26 new subjects to genomic database.</p>
+
+                        <a name="201510"></a>
+                        <h3>OCTOBER 27, 2015</h3>
+                        <p>Added 347 new subjects to genomic database.</p>
+
+                        <a name="201509"></a>
+                        <h3>SEPTEMBER 10, 2015</h3>
+                        <p>Added 229 new subjects to genomic database.</p>
+
+                        <a name="201508"></a>
+                        <h3>AUGUST 10, 2015</h3>
+                        <p>Added 127 new subjects to genomic database.</p>
+
+                        <a name="201506"></a>
+                        <h3>JUNE 22, 2015</h3>
+                        <p>Modified existing alias in the genomic database.</p>
+
+                        <h3>JUNE 05, 2015</h3>
+                        <p>Added 11 new subjects to genomic database.</p>
+
+                        <a name="201505"></a>
+                        <h3>MAY 08, 2015</h3>
+                        <p>Added 229 new subjects to genomic database.</p>
+
+                        <a name="201504"></a>
+                        <h3>APRIL 24, 2015</h3>
+                        <p>Added 486 new subjects to genomic database.</p>
+
+                    </article>
+
+                </div>
+            </div>
+            <div class="4u 12u(narrower)">
+                <div id="sidebar">
+                    <!-- Sidebar -->
+                    <section>
+                        <h3>Dates</h3>
+                        <ul class="links">
+                            <li><a href="#201512">DECEMBER, 2015</a></li>
+                            <li><a href="#201511">NOVEMBER, 2015</a></li>
+                            <li><a href="#201510">OCTOBER, 2015</a></li>
+                            <li><a href="#201509">SEPTEMBER, 2015</a></li>
+                            <li><a href="#201508">AUGUST, 2015</a></li>
+                            <li><a href="#201506">JUNE, 2015</a></li>
+                            <li><a href="#201505">MAY, 2015</a></li>
+                            <li><a href="#201504">APRIL, 2015</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+<!-- END CONTENT -->
+
+{% block scripts %}
+<!-- JQUERY -->
+<script type="text/javascript">
+jQuery( document ).ready(function($) {
+    $( 'a[href="/annoucement/"]' ).parent().attr('class', 'current');
+});
+</script>
+<!-- End JQUERY -->
+{% endblock %}

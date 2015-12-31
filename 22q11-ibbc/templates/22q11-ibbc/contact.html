@@ -1,0 +1,88 @@
+{% extends "base_arcana.html" %}
+
+{% block title %}22q11-ibbc.org | Contacts{% endblock title %}
+
+{% load staticfiles%}
+
+<!-- CONTENT -->
+{% block content %}
+<section class="wrapper style1">
+    <div class="container">
+        <div class="row 200%">
+            <div class="8u 12u(narrower)">
+                <div id="content">
+                    <!-- Content -->
+                    <article>
+                        <header>
+                            <h2>Contacts</h2>
+                        </header>
+                        <ul>
+                            <a name="overall"></a>
+                            <li><b>Overall Program Leads</b></li>                
+                            <li>CHOP - PI: Donna M. McDonald-McGinn, MS, CGC. (<a href="mailto:MCGINN@email.chop.edu">MCGINN [at] email.chop.edu</a>)</li>
+                            <li>Penn - PI: Raquel Gur, M.D. Ph.D. (<a href="mailto:raquel@mail.med.upenn.edu">raquel [at] mail.med.upenn.edu</a>)</li>
+                        </ul>
+                        <ul>
+                            <a name="genomics"></a>
+                            <li><b>Genomics Lead Site</b></li>
+                            <li>Emory University - PI: Stephen Warren, Ph.D. (<a href="mailto:swarren@emory.edu">swarren [at] emory.edu</a>)</li>
+                        </ul>
+                        <ul>
+                            <a name="can+"></a>
+                            <li><b>Canada, Australia, & Chile (CAN+) Lead Site</b></li>  
+                            <li>Toronto, Canada - PIs: Anne Bassett, M.D. (<a href="mailto:anne.bassett@utoronto.ca">anne.bassett [at] utoronto.ca</a>)
+                            and Eva Chow, M.D. (<a href="mailto:eva.chow@utoronto.ca">eva.chow [at] utoronto.ca</a>)</li>
+                        </ul>
+                        <ul>
+                            <a name="eua"></a>
+                            <li><b>Europe A (EUA) Lead Site</b></li>
+                            <li>Leuven, Belgium - PI: Ann Swillen, Ph.D. (<a href="mailto:ann.swillen@uzleuven.be">ann.swillen [at] uzleuven.be</a>)
+                            and Utrecht, Netherlands - PI: Jacob Vorstman, M.D. Ph.D. (<a href="mailto:J.A.S.Vorstman@umcutrecht.nl">J.A.S.Vorstman [at] umcutrecht.nl</a>)</li>
+                        </ul>
+                        <ul>
+                            <a name="eub"></a>
+                            <li><b>Europe B (EUB) Lead Site</b></li> 
+                            <li>Cardiff, UK - PIs: Marianne Van Den Bree, Ph.D. (<a href="mailto:VANDENBREEMB@cardiff.ac.uk">VANDENBREEMB [at] cardiff.ac.uk</a>)
+                            and Michael Owen, M.D. Ph.D. (<a href="mailto:OwenMJ@cardiff.ac.uk">OwenMJ [at] cardiff.ac.uk</a>)</li>
+                        </ul>
+                        <ul>
+                            <a name="usa"></a>
+                            <li><b>USA Lead Sites</b></li> 
+                            <li>CHOP - PI: Donna M. McDonald-McGinn, MS, CGC. (<a href="mailto:MCGINN@email.chop.edu">MCGINN [at] email.chop.edu</a>)
+                            , Penn - PI: Raquel Gur, M.D. Ph.D. (<a href="mailto:raquel@mail.med.upenn.edu">raquel [at] mail.med.upenn.edu</a>)
+                            and UCLA - PI: Carrie Bearden, Ph.D. (<a href="mailto:cbearden@mednet.ucla.edu">cbearden [at] mednet.ucla.edu</a>)</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <div class="4u 12u(narrower)">
+                <div id="sidebar">
+                    <!-- Sidebar -->
+                    <section>
+                        <h3>Navigation</h3>
+                        <ul class="links">
+                            <li><a href="#overall">Overall Leads</a></li>
+                            <li><a href="#genomics">Genomics</a></li>
+                            <li><a href="#can+">CAN+</a></li>
+                            <li><a href="#eua">EUA</a></li>
+                            <li><a href="#eub">EUB</a></li>
+                            <li><a href="#usa">USA</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+<!-- END CONTENT -->
+
+{% block scripts %}
+<!-- JQUERY -->
+<script type="text/javascript">
+jQuery( document ).ready(function($) {
+    $( 'a[href="/contact/"]' ).parent().attr('class', 'current');
+});
+</script>
+<!-- End JQUERY -->
+{% endblock %}

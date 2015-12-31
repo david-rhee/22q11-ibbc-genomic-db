@@ -1,0 +1,81 @@
+{% extends "base_arcana.html" %}
+
+{% block title %}22q11-ibbc.org | HOME{% endblock title %}
+
+{% load staticfiles%}
+
+<!-- CONTENT -->
+{% block content %}
+<!-- Highlights -->
+<section class="wrapper style1">
+    <div class="container">
+        <div class="row 200%">
+            <section class="6u 12u(narrower)">
+                <div class="box highlight">
+                    <i class="icon major fa-bullhorn"></i>
+                    <h3>Announcements</h3>
+                    <p>Check out the <a href="{% url 'announcement' %}">latest news</a> from
+                    the International Consortium on Brain and Behavior in 22q11.2 Deletion Syndrome</p>
+                </div>
+            </section>
+            <section class="6u 12u(narrower)">
+                <div class="box highlight">
+                    <i class="icon major fa-bookmark"></i>
+                    <h3>Project Overview</h3>
+                    <p>Click <a href="{% url 'about' %}">here</a> for more information about
+                    the International Consortium on Brain and Behavior in 22q11.2 Deletion Syndrome</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+<!-- END Highlights -->
+
+<!-- Gigantic Heading -->
+<section class="wrapper style2">
+    <div class="container">
+        <header class="major">
+            <h2>The Consortium provides the largest available sample to date</h2>
+            <p>1000 genetically and phenotypically characterized individuals with 22q11DS</p>
+        </header>
+    </div>
+</section>
+<!-- END Gigantic Heading -->
+
+<!-- Highlights -->
+<section class="wrapper style1">
+    <div class="container">
+        <div class="row 200%">
+            <section class="6u 12u(narrower)">
+                <div class="box highlight">
+                    <i class="icon major fa-database"></i>
+                    <h3>Genomic Data</h3>
+                    <p>The latest genomic data is <a href="">available here</a>
+                    for participating members</p>
+                </div>
+            </section>
+            <section class="6u 12u(narrower)">
+                <div class="box highlight">
+                    <i class="icon major fa-database"></i>
+                    <h3>Phenotypic Data</h3>
+                    <p>The latest phenotypic data is <a href="https://penn-bbc.med.upenn.edu/index.php?action=myprojects" target="_blank">available here</a>
+                    for participating members</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+<!-- END Highlights -->
+
+{% endblock %}
+<!-- END CONTENT -->
+
+{% block scripts %}
+<!-- JQUERY -->
+<script type="text/javascript">
+jQuery( document ).ready(function($) {
+    $( 'a[href="/home/"]' ).parent().attr('class', 'current');
+});
+</script>
+<!-- End JQUERY -->
+{% endblock %}

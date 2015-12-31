@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+
+<!-- HEAD -->
+<head>
+
+    <title>{% block title %}{% endblock title %}</title>
+    
+    <!-- CSS Style -->
+    {% load staticfiles %}
+    {% block extrastyle %}
+    <link rel="icon" type="image/x-icon" href="{% static "images/ibbc.ico" %}" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="{% static "assets/js/ie/html5shiv.js" %}"></script><![endif]-->
+    <link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="{% static "assets/css/ie8.css" %}" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="{% static "assets/css/ie9.css" %}" /><![endif]-->
+    {% endblock extrastyle %}
+    <!-- End CSS Style -->
+
+</head>
+<!-- End HEAD -->
+
+<!-- BODY -->
+<body>
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header">
+
+            <!-- Logo -->
+            <img src="{% static "images/logo_two.png" %}" width="323" height="100" />
+            <h1><a href="{% url 'home' %}" id="logo"><em>International</em> 22q11.2 <em>Brain Behavior Consortium</em></a></h1>
+            <!-- END Logo -->
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+					<li>|</li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'announcement' %}">Announcements</a></li>
+                    <li><a href="{% url 'contact' %}">Contacts</a></li>
+                    <li><a href="{% url 'member_site' %}">Member Sites</a></li>
+                    <li><a href="{% url 'publication' %}">Publications</a></li>
+                </ul>
+            </nav>
+            <!-- END Nav -->
+
+        </div>
+        <!-- END Header -->
+
+        <!-- CONTENT -->
+        {% block content %}{% endblock content %}
+        <!-- END CONTENT -->
+    
+        <!-- Footer -->
+        <div id="footer">
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <ul class="menu">
+                    <li>&copy; 2015 - 2016 Department of Genetics, Albert Einstein College of Medicine, Bronx NY USA. All rights reserved</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+            <!-- END Copyright -->
+
+        </div>
+        <!-- END Footer -->
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.dropotron.min.js" %}"></script>
+    <script src="{% static "assets/js/skel.min.js" %}"></script>
+    <script src="{% static "assets/js/util.js" %}"></script>
+    <!--[if lte IE 8]><script src="{% static "assets/js/ie/respond.min.js" %}"></script><![endif]-->
+    <script src="{% static "assets/js/main.js" %}"></script>
+    {% block scripts %}{% endblock scripts %}
+    <!-- END Scripts -->
+
+</body>
+</html>

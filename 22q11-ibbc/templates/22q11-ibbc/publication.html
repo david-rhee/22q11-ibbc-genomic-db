@@ -1,0 +1,49 @@
+{% extends "base_arcana.html" %}
+
+{% block title %}22q11-ibbc.org | Publications{% endblock title %}
+
+{% load staticfiles%}
+
+<!-- CONTENT -->
+{% block content %}
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <article>
+                <header>
+                    <h2>Publications by Consortium Members</h2>
+                </header>
+                <ul>
+                    <li><a href="http://www.ncbi.nlm.nih.gov/pubmed/25989227" target="_blank">
+                    Developmental trajectories in 22q11.2 deletion syndrome.
+                    Swillen A, McDonald-McGinn D. Am J Med Genet C Semin Med Genet. 2015 May 18. doi: 10.1002/ajmg.c.31435.</a>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" class="wrapper style3">
+    <div class="container">
+        <header>
+            <h2>Interested in learning more?</h2>
+            <a href="{% url 'about' %}" class="button">Project Overview</a>
+        </header>
+    </div>
+</section>
+<!-- END CTA -->
+
+{% endblock %}
+<!-- END CONTENT -->
+
+{% block scripts %}
+<!-- JQUERY -->
+<script type="text/javascript">
+jQuery( document ).ready(function($) {
+    $( 'a[href="/publication/"]' ).parent().attr('class', 'current');
+});
+</script>
+<!-- End JQUERY -->
+{% endblock %}

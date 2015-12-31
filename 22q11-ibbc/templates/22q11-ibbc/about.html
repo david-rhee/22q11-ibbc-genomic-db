@@ -1,0 +1,90 @@
+{% extends "base_arcana.html" %}
+
+{% block title %}22q11-ibbc.org | About{% endblock title %}
+
+{% load staticfiles%}
+
+<!-- CONTENT -->
+{% block content %}
+<section class="wrapper style1">
+    <div class="container">
+        <div class="row 200%">
+            <div class="4u 12u(narrower)">
+                <div id="sidebar">
+                    <!-- Sidebar -->
+                    <section>
+                        <h3>About the International Consortium on Brain and Behavior in 22q11.2 Deletion Syndrome</h3>
+                        <ul class="links">
+                            <li><a href="#overview">Project Overview</a></li>
+                            <li><a href="#aims">Specific Aims</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <div class="8u  12u(narrower) important(narrower)">
+                <div id="content">
+                    <article>
+                        <a name="overview"></a>
+                        <h2>Project Overview</h2>
+            
+                        <p>The International Consortium on Brain and Behavior in 22q11.2 Deletion Syndrome (22q11DS) is a
+                        collaborative RO1 of 22 institutions, with one genomic and four phenotyping leading sites. The collaboration
+                        combines genomic with neuropsychiatric and neurobehavioral paradigms to advance the understanding of the
+                        pathogenesis of schizophrenia (SZ) and related phenotypes. The Consortium provides the largest available
+                        sample to date of 1000 genetically and phenotypically characterized individuals with 22q11DS. The proposed
+                        project will be an unprecedented international initiative to examine a common deletion
+                        associated with SZ and elucidate its genomic and behavioral substrates. Beyond the potential for yielding a
+                        better understanding of a severe manifestation of 22q11DS, the results will help identify pathways leading to
+                        SZ in the general population in a way that will inform novel treatments.</p>
+
+                        <a name="aims"></a>
+                        <h2>Specific Aims</h2>
+
+                        <p>There is a substantial risk for developing SZ in adolescents and young adults with 22q11DS (~25-30%), with illness
+                        presentation and course similar to SZ in the general population (~1%). Consortium sites have established
+                        collaborations with extensive experience in applying integrative genomic and brain-behavior strategies to study
+                        22q11DS and SZ across the lifespan. The consortium will examine neuropsychiatric features through an integrated
+                        consensus focusing on SZ and emergence of psychosis. Neurobehavioral measures will be investigated
+                        across domains, establishing their relation to psychosis</p>
+
+                        <p>The consortium will conduct WGS on 600 individuals with 22q11DS to uncover genetic variation that may contribute
+                        to the heterogeneity of neuropsychiatric and neurobehavioral phenotypes of SZ and psychosis. The convergence of phenotypic
+                        and genomic measures in adult and pediatric populations will permit examination of shared genetic variants that
+                        influence the expression of SZ and early psychosis. The consoritum will perform WGS on 300 adults using phenotypic “extremes”:
+                        150 22q11DS individuals with SZ and 150 22q11DS individuals without psychotic symptoms, as well as 300 pediatric
+                        participants with 22q11DS phenotyped by cognitive decline and psychosis proneness. This will be followed by
+                        association analysis on all common SNPs and CNVs in the entire sample. The discovered genomic variation will be
+                        followed in non-deleted SZ GWAS.</p>
+
+                        <p>As diverse approaches and instruments are applied in assessing neuropsychiatric and neurobehavioral phenotypes in
+                        22q11DS, the Consortium can advance the field by developing and piloting common measures that tap major
+                        dimensions of psychopathology and brain function. This will enhance the integration of phenotypic and
+                        genomic data, lay the foundation for a systematic approach internationally and provide a framework for
+                        longitudinal studies. This approach will cohere with RDoC and integration of genomic and neuroscience
+                        paradigms</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}
+<!-- END CONTENT -->
+
+{% block scripts %}
+<!-- JQUERY -->
+<script type="text/javascript">
+jQuery( document ).ready(function($) {
+    $( 'a[href="/about/"]' ).parent().attr('class', 'current');
+});
+</script>
+<!-- End JQUERY -->
+{% endblock %}

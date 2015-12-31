@@ -1,0 +1,100 @@
+{% extends "base_arcana.html" %}
+
+{% block title %}22q11-ibbc.org | Member Sites{% endblock title %}
+
+{% load staticfiles%}
+
+<!-- CONTENT -->
+{% block content %}
+<section class="wrapper style1">
+    <div class="container">
+        <div class="row 200%">
+            <div class="8u 12u(narrower)">
+                <div id="content">
+                    <!-- Content -->
+                    <article>
+                        <header>
+                            <h2>Member Sites and Participants</h2>
+                        </header>
+                        <h3>Genomics</h3>
+                        <ul>
+                            <a name="genomics"></a>
+                            <li><b>USA</b></li>
+                            <li>Emory University - PI: Stephen Warren, Ph.D. <b>(Lead Site)</b></li>
+                            <li>Albert Einstein College of Medicine - PI: Bernice Morrow Ph.D.</li>
+                            <li>CHOP - PI: Beverly Emanuel, Ph.D.</li>
+                            <li>Leuven - PI: Joris Vermeesch, Ph.D.</li>
+                            <li>Toronto - PI: Steve Sherer, Ph.D.</li>
+                        </ul>
+                        <h3>Phenotypes</h3>
+                        <ul>
+                            <a name="can+"></a>
+                            <li><b>Canada, Australia, & Chile (CAN+)</b></li>
+                            <li>Toronto, Canada - PIs: Anne Bassett, M.D. and Eva Chow, M.D. <b>(Lead Site)</b></li>
+                            <li>Newcastle, Australia - PI: Linda Campbell, Ph.D.</li>
+                            <li>Santiago, Chile - PI: Gabriela Repetto, M.D.</li>
+                        </ul>
+                        <ul>
+                            <a name="eua"></a>
+                            <li><b>Europe A (EUA)</b></li> 
+                            <li>Leuven, Belgium - PI: Ann Swillen, Ph.D. <b>(Lead Site)</b></li>
+                            <li>Utrecht, Netherlands - PI: Jacob Vorstman, M.D. Ph.D. <b>(Lead Site)</b></li>
+                            <li>Geneva, Switzerland - PI: Stephen Eliez, M.D.</li>
+                            <li>Maastricht, Netherlands - PI: Therese Van Amelsvoort, M.D. Ph.D.</li>
+                            <li>Marseilles, France - PI: Nicole Philip, M.D.</li>
+                            <li>Tel Aviv, Israel - PI: Doron Gothelf, M.D.</li>
+                        </ul>
+                        <ul>
+                            <a name="eub"></a>
+                            <li><b>Europe B (EUB)</b></li> 
+                            <li>Cardiff, UK - PIs: Marianne Van Den Bree, Ph.D. and Michael Owen, M.D. Ph.D. <b>(Lead Site)</b></li>
+                            <li>Dublin, Ireland - PI: Kieran Murphy, M.D. Ph.D.</li>
+                            <li>London, UK - PIs: Clodagh Murphy, M.D. Ph.D. and Declan Murphy, M.D. Ph.D.</li>
+                            <li>Madrid, Spain - PI: Celso Arango, M.D. and Sixto Minaur, M.D.</li>
+                            <li>Mallorca, Spain - PI: Damian Heine Suner, Ph.D.</li>
+                            <li>Rome, Italy - PIs: Marco Armando, M.D. and Stefano Vicari, M.D.</li>
+                        </ul>
+                        <ul>
+                            <a name="usa"></a>
+                            <li><b>USA</b></li>                
+                            <li>CHOP - PI: Donna M. McDonald-McGinn, MS, CGC. <b>(Lead Site)</b></li>
+                            <li>Penn - PI: Raquel Gur, M.D. Ph.D. <b>(Lead Site)</b></li>
+                            <li>UCLA - PI: Carrie Bearden, Ph.D. <b>(Lead Site)</b></li>
+                            <li>Duke - PI: Vandana Shashi, MD.</li>
+                            <li>Emory - PI: Joseph Cubells, M.D. Ph.D.</li>
+                            <li>Syracuse - PI: Wendy Kates, Ph.D.</li>
+                            <li>UC Davis - PI: Tony Simon, Ph.D.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <div class="4u 12u(narrower)">
+                <div id="sidebar">
+                    <!-- Sidebar -->
+                    <section>
+                        <h3>Navigation</h3>
+                        <ul class="links">
+                            <li><a href="#genomics">Genomics</a></li>
+                            <li><a href="#can+">CAN+</a></li>
+                            <li><a href="#eua">EUA</a></li>
+                            <li><a href="#eub">EUB</a></li>
+                            <li><a href="#usa">USA</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+<!-- END CONTENT -->
+
+{% block scripts %}
+<!-- JQUERY -->
+<script type="text/javascript">
+jQuery( document ).ready(function($) {
+    $( 'a[href="/member_site/"]' ).parent().attr('class', 'current');
+});
+</script>
+<!-- End JQUERY -->
+{% endblock %}
