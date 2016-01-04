@@ -1,0 +1,38 @@
+{% extends "data/data_base.html" %}
+
+<!-- CONTENT-DATA-CONTENT- -->
+{% block content-data-content %}
+    <div id='data-box'>
+        <div id='data-box-top'></div>
+        <div id='data-box-title'>Subject Information</div>
+
+        <table class="detail-table">
+            <tr>
+                <td id="tag-name"> Genomics DB ID </td><td id="tag-value"> {{ subject.genomic_db_id }} </td>
+            </tr>
+            <tr>
+                <td id="tag-name"> Local Site ID </td><td id="tag-value"> {{ subject.site_id }} </td>
+            </tr>
+            <tr>
+                <td id="tag-name"> Alias </td><td id="tag-value"> {{ subject.alias }} </td>
+            </tr>
+            <tr>
+                <td id="tag-name"> Orginating Site </td><td id="tag-value"> {{ subject.owner_site }} </td>
+            </tr>
+            <tr>
+                <td id="tag-name"> Affymetrix Data </td>
+                <td>
+                    <table class="detail-inner-table">
+                        {% for affymetrix in affymetrixes %}
+                            <tr>
+                                <td id="tag-value"><a href="{% url "data:affymetrix_detail" affymetrix.pk %}"> {{ affymetrix.name }} </a></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+{% endblock %}
+<!-- END CONTENT -->

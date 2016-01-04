@@ -1,0 +1,37 @@
+{% extends "base_private.html" %}
+
+{% block title %}22q11-ibbc.org | Data{% endblock title %}
+
+<!-- CONTENT -->
+{% block content %}
+<div id='content-main'>
+
+    <div id='content-data-menu'>
+        <div id='content-data-menu-top'></div>
+        <ul class="subNav">
+            <li><a href="{% url 'data:home' %}">home</a></li>
+            <li class="nav-separator">|</li> BROWSE :
+            <li><a href="{% url 'data:subject_all_list' %}">subjects</a></li> I
+            <li><a href="{% url 'data:affymetrix_all_list' %}">affymetrix</a></li> I
+            <li><a href="{% url 'data:wgs' %}">whole genome sequencing</a></li>
+            <li class="nav-separator">|</li> SEARCH :
+            <li><a href="{% url 'data:subject_search' %}">subjects</a></li> I
+            <li><a href="{% url 'data:affymetrix_search' %}">affymetrix</a></li>
+        </ul>
+    </div>
+    <div id='content-data-content'>
+        {% block content-data-content %}{% endblock content-data-content %}
+    </div>
+</div>
+{% endblock %}
+<!-- END CONTENT -->
+
+{% block scripts %}
+<!-- JQUERY -->
+<script type="text/javascript">
+jQuery( document ).ready(function($) {
+    $( 'a[href="/data/"]' ).attr('id', 'active-page');
+});
+</script>
+<!-- End JQUERY -->
+{% endblock %}

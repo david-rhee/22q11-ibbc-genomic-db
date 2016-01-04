@@ -1,0 +1,26 @@
+{% extends "base_private.html" %}
+
+{% block title %}22q11-ibbc.org | Documents{% endblock title %}
+
+<!-- CONTENT -->
+{% block content %}
+<div id='content-main'>
+
+    <div id='content-data-content'>
+        <div id='data-box'>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
+<!-- END CONTENT -->
+
+{% block scripts %}
+<!-- JQUERY -->
+<script type="text/javascript">
+jQuery( document ).ready(function($) {
+    $( 'a[href="/data/documents/"]' ).attr('id', 'active-page');
+});
+</script>
+<!-- End JQUERY -->
+{% endblock %}

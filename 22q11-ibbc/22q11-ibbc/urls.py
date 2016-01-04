@@ -12,6 +12,11 @@ admin.autodiscover()
 from .views import About, Announcement, Contact, Home, Member_Site, Publication
 
 urlpatterns = patterns('',
+    # Uncomment the admin/doc line below to enable admin documentation:
+    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # Uncomment the next line to enable the admin:
+    url(r'^admin/', include(admin.site.urls)),
+
     # public area
     url(r'^$', '22q11-ibbc.views.Home', name='index'),
     url(r'^home/$', '22q11-ibbc.views.Home', name='home'),
@@ -21,10 +26,8 @@ urlpatterns = patterns('',
     url(r'^member_site/$', '22q11-ibbc.views.Member_Site', name='member_site'),
     url(r'^publication/$', '22q11-ibbc.views.Publication', name='publication'),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
+    # private area
+    url(r'^data/', include('data.urls', namespace='data')),
 )
 
 # Uncomment the next line to serve media files in dev.

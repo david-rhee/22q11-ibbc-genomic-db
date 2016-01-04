@@ -1,0 +1,49 @@
+{% extends "data/data_base.html" %}
+
+<!-- CONTENT-DATA-CONTENT- -->
+{% block content-data-content %}
+    <div id='data-box'>
+        <div id='data-box-top'></div>
+        <div id='data-box-title'>Search subjects</div>
+
+        <form method="post" action="">
+            {% csrf_token %}
+            <table id='form-detail-table'>
+            <tbody>
+                <tr>
+                    <th>Genomic DB ID:</th>
+                    <td><input id="id_genomic_db_id" maxlength="50" name="genomic_db_id" type="number" value="{{ form.genomic_db_id.value|default_if_none:"" }}"/></td>
+                </tr>
+                <tr>
+                    <th>Local Site ID:</th>
+                    <td><input id="id_local_id" maxlength="50" name="local_id" type="text" value="{{ form.local_id.value|default_if_none:"" }}"/></td> 
+                </tr>
+                <tr>
+                    <th>Alias:</th>
+                    <td><input id="id_alias" maxlength="50" name="alias" type="text" value="{{ form.alias.value|default_if_none:"" }}"/></td> 
+                </tr>
+                <tr>
+                    <th>Site:</th>
+                    <td>                
+                        <select id="id_site" name="site">
+                        {% for x,y in form.fields.site.choices %}
+                            <option value="{{ x }}">{{ y }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><input id='form-submit' type="submit" value="Submit" /></td>
+                </tr>    
+                <tr>
+                    <th></th>
+                    <td><a href="{% url 'data:subject_search' %}">Cancel</a></td>
+                </tr>
+            </tbody>
+            </table>
+        </form>
+
+    </div>
+{% endblock %}
+<!-- END CONTENT -->

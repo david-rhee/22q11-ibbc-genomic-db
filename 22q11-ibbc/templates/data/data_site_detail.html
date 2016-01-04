@@ -1,0 +1,65 @@
+{% extends "data/data_base.html" %}
+
+<!-- CONTENT-DATA-CONTENT -->
+{% block content-data-content %}
+    <div id='data-box'>
+        <div id='data-box-top'></div>
+        <div id='data-box-title'>Site Detail</div>
+
+        <table>
+            <tr>
+                <td class="tag-name"> Site Name </td><td class="tag-value"> {{ site.name }} </td>
+            </tr>
+            <tr>
+                <td class="tag-name"> Site Group </td><td class="tag-value"> {{ site.group }} </td>
+            </tr>
+            <tr>
+                <td class="tag-name"> Site PIs </td>
+                <td>
+                    <table class="inner-table">
+                        {% for pi in site.site_pis.all %}
+                            <tr>
+                                <td class="tag-value"> <a href={% url "data:user_profile_detail" pi.pk %}>{{ pi.first_name }} {{ pi.last_name }}</a> </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="tag-name"> Site Members </td>
+                <td>
+                    <table class="inner-table">
+                        {% for member in site.site_members.all %}
+                            <tr>
+                                <td class="tag-value"> <a href={% url "data:user_profile_detail" member.pk %}>{{ member.first_name }} {{ member.last_name }}</a> </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="tag-name"> Allowed Users </td>
+                <td>
+                    <table class="inner-table">
+                        {% for allowed_user in site.allowed_users.all %}
+                            <tr>
+                                <td class="tag-value"> <a href={% url "data:user_profile_detail" allowed_user.pk %}>{{ allowed_user.first_name }} {{ allowed_user.last_name }}</a> </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="tag-name"> Site Subjects </td><td class="tag-value"><a href="{% url "data:subject_site_list" site.pk %}"> {{ subjects|get_item:site.name }}</a> subjects</td>
+            </tr>
+            <tr>
+                <td class="tag-name"> Site Affymetrix </td><td class="tag-value"><a href="{% url "data:affymetrix_site_list" site.pk %}"> {{ affymetrixes|get_item:site.name }}</a> affymetrix data</td>
+            </tr>
+            <tr>
+                <td class="tag-name"> Affymetrix Data Folder </td><td class="tag-value"><a href="{% url "data:affymetrix_folder_download" site.folder %}"> Download </a> </td>
+            </tr>
+        </table>
+
+    </div>
+{% endblock %}
+<!-- END CONTENT -->

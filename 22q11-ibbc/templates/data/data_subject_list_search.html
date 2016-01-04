@@ -1,0 +1,63 @@
+{% extends "data/data_base.html" %}
+
+<!-- CONTENT-DATA-CONTENT- -->
+{% block content-data-content %}
+    <div id='data-box'>
+        <div id='data-box-top'></div>
+        <div id='data-box-title'>List of subjects</div>
+
+        <table>
+            <tr>
+                <th>Genomics DB ID</th>
+                <th>Local Site ID</th>
+                <th>Alias</th>
+                <th>Project</th>
+                <th>Site</th>
+            </tr>
+            {% for subject in subject_list %}
+            <tr>
+                <td id="tag-name"><a href="{% url "data:subject_detail" subject.pk %}"> {{ subject.pk }} </a></td>
+                <td id="tag-value">{{ subject.site_id }}</td>
+                <td id="tag-value">{{ subject.alias }}</td>
+                <td id="tag-value">{{ subject.project }}</td>
+                <td id="tag-value"><a href="{% url "data:site_detail" subject.owner_site.pk %}"> {{ subject.owner_site.name }} </a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td id="tag-name"> Nothing found... </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <div class="pagination">
+                        <span class="step-links">
+                            {% if page_obj.has_previous %}
+                                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                            {% endif %}
+                
+                            <span class="current">
+                                Page {{ page_obj.number }} of {{ paginator.num_pages }}
+                            </span>
+                
+                            {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <form action="{% url 'data:subject_search_list' g l a s %}">
+            <div class="page-search">
+                <input type="number" name="page" min="1" max="{{ paginator.num_pages }}" value="{{ page }}">
+                <input id='form-submit' type="submit" value="GO" />                                        
+            </div>
+        </form>
+        <div id="hidden-line-bottom"></div>
+
+    </div>
+{% endblock %}
+<!-- END CONTENT -->

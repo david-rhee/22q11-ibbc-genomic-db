@@ -1,0 +1,23 @@
+{% extends "data/data_base.html" %}
+
+<!-- CONTENT-DATA-CONTENT- -->
+{% block content-data-content %}
+    <div id='data-box'>
+        <div id='data-box-top'></div>
+        <div id='data-box-title'>Affymetrix Data</div>
+
+        <table class="detail-table">
+            <tr>
+                <td id="tag-name"> Name </td><td id="tag-value"> {{ affymetrix.name }} </td>
+            </tr>
+            <tr>
+                <td id="tag-name"> Subject </td><td id="tag-value"> <a href="{% url "data:subject_detail" affymetrix.subject.genomic_db_id %}"> {{ affymetrix.subject.genomic_db_id }} </a> </td>
+            </tr>
+            <tr>
+                <td id="tag-name"> Download </td><td id="tag-value"> <a href="{% url "data:affymetrix_download" affymetrix.pk %}"> Download </a> </td>
+            </tr>
+        </table>
+
+    </div>
+{% endblock %}
+<!-- END CONTENT -->

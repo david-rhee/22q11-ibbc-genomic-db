@@ -1,0 +1,39 @@
+{% extends "data/data_base.html" %}
+
+<!-- CONTENT-DATA-CONTENT -->
+{% block content-data-content %}
+<div id='content-main'>
+
+    <div id='data-box'>
+        <div id='data-box-top'></div>
+        <div id='data-box-title'>Personnel Detail</div>
+        <table>
+        <tr>
+            <td class="tag-name"> Name </td><td class="tag-value"> {{ userprofile.user.first_name }} {{ userprofile.user.last_name }} </td>
+        </tr>
+        <tr>
+            <td class="tag-name"> Email </td>
+            <td class="tag-value">
+            {% with userprofile.user.email|split:"@" as strings %}
+                <email> {{ strings.0 }} [at] {{ strings.1 }} </email>
+            {% endwith %}
+            </td>   
+        </tr>
+        <tr>
+            <td class="tag-name"> User Roles </td>
+            <td>
+                <table class="inner-table">
+                    {% for roles in userprofile.user_roles.all %}
+                        <tr>
+                            <td class="tag-value"> {{ roles.role }} </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
+<!-- END CONTENT -->

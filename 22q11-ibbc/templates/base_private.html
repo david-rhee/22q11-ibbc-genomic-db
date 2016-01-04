@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+
+<!-- HEAD -->
+<head>
+<title>{% block title %}{% endblock title %}</title>
+
+    <!-- CSS Style -->
+    {% load staticfiles %}
+    {% block extrastyle %}
+    <link rel="icon" type="image/x-icon" href="{% static "images/ibbc.ico" %}" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/base_private.css" %}" />
+    {% endblock extrastyle %}
+    <!-- End CSS Style -->
+
+</head>
+<!-- End HEAD -->
+
+<!-- BODY -->
+<body>
+
+<!-- FULLWIDTHSTRIPE -->
+<div id="fullWidthStripe"></div>
+
+<!-- CONTAINER -->
+<div id="container">
+
+    <!-- HEADER -->
+    <div id="header">
+        <!-- LOGO -->
+        <div id="logo"><a href="{% url 'home' %}"><img src="{% static "images/logo_one.png" %}" width="323" height="118" /></a></div>
+        <div align="center"><h3>MEMBERS ONLY AREA</h3></div>
+    </div>
+    <!-- END HEADER -->
+    
+    <!-- NAVIGATION -->
+    <ul class="mainNav">
+        <li><a href="{% url 'home' %}">Public Area</a></li>
+        <li class="nav-separator">|</li>
+        <li><a href="{% url 'data:home' %}">Data</a></li>
+        <li class="nav-separator">|</li>
+        <li><a href="{% url 'data:documents' %}">Documents</a></li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-separator">|</li>
+        <li><a id="logout" href="{% url 'data:22q11_ibbc_logout' %}">logout</a></li>
+        {% endif %}
+    </ul>
+    <!-- End NAVIGATION -->
+    
+    <!-- CONTENT -->
+    <div id="content">
+        {% if messages %}
+            {% for message in messages %}
+                <div id="dialog" title="Error">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock content %}
+    </div>
+    <!-- END CONTENT -->
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <p id="footer-copy">&copy; 2015 - 2016 Department of Genetics, Albert Einstein College of Medicine, Bronx NY USA</p>
+    </div>
+    <!-- End FOOTER -->
+
+</div>
+<!-- END Container -->
+
+</body>
+<!-- END BODY -->
+
+</html>
+
+<!-- Scripts -->
+<div id="scripts">
+<script type="text/javascript">
+$(function() {
+    $( "#dialog" ).dialog();
+});
+</script>
+{% block scripts %}{% endblock scripts %}
+</div>
+<!-- END Scripts -->

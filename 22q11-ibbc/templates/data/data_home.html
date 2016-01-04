@@ -1,0 +1,26 @@
+{% extends "data/data_base.html" %}
+
+<!-- CONTENT-DATA-CONTENT -->
+{% block content-data-content %}
+    <div id='data-box'>
+        <div id='data-box-top'></div>
+        <div id='data-box-title'>Summary</div>
+
+        <table>
+            <tr>
+                <th>Member Sites</th>
+                <th>Subjects</th>
+                <th>Affymetrix Data</th>
+            </tr>
+            {% for site in sites %}
+            <tr>
+                <td id="tag-name-summary"><a href="{% url "data:site_detail" site.pk %}"> {{ site.name }} </a></td>
+                <td id="tag-value"><a href="{% url "data:subject_site_list" site.pk %}"> {{ subjects|get_item:site.name }}</a> subjects</td>
+                <td id="tag-value"><a href="{% url "data:affymetrix_site_list" site.pk %}"> {{ affymetrixes|get_item:site.name }}</a> affymetrix data</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}
+<!-- END CONTENT -->

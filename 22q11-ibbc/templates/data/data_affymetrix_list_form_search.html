@@ -1,0 +1,31 @@
+{% extends "data/data_base.html" %}
+
+<!-- CONTENT-DATA-CONTENT- -->
+{% block content-data-content %}
+    <div id='data-box'>
+        <div id='data-box-top'></div>
+        <div id='data-box-title'>Search affymetrix</div>
+
+        <form method="post" action="">
+            {% csrf_token %}
+            <table id='form-detail-table'>
+            <tbody>
+                <tr>
+                    <th>Affymetrix Name:</th>
+                    <td><input id="id_affymetrix_name" maxlength="50" name="affymetrix_name" type="text" value="{{ form.affymetrix_name.value|default_if_none:"" }}"/></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><input id='form-submit' type="submit" value="Submit" /></td>
+                </tr>    
+                <tr>
+                    <th></th>
+                    <td><a href="{% url 'data:subject_search' %}">Cancel</a></td>
+                </tr>
+            </tbody>
+            </table>
+        </form>
+
+    </div>
+{% endblock %}
+<!-- END CONTENT -->
