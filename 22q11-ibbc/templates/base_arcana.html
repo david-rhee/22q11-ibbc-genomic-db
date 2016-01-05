@@ -49,6 +49,14 @@
                     <li><a href="{% url 'contact' %}">Contacts</a></li>
                     <li><a href="{% url 'member_site' %}">Member Sites</a></li>
                     <li><a href="{% url 'publication' %}">Publications</a></li>
+					<li>|</li>
+                    <li>
+                        <a href="{% url 'data:home' %}">For Researchers</a>
+                        <ul>
+                            <li><a href="{% url 'data:home' %}">Data</a></li>
+                            <li><a href="{% url 'data:documents' %}">Documents</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <!-- END Nav -->
