@@ -4,6 +4,7 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.contrib.auth.views import password_reset, password_reset_confirm
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse, StreamingHttpResponse
 from django.shortcuts import redirect, render
@@ -16,6 +17,31 @@ from braces.views import LoginRequiredMixin
 from .models import Site, UserProfile, Subject, Affymetrix
 from .forms import SubjectListForm, AffymetrixListForm
 from utilities.utilities import get_item, split
+
+#####################################################################################################
+# Password Reset
+"""
+ Password Reset page.
+"""
+def reset(request):
+    return password_reset(request, template_name='data/data_password_reset_form.html',
+        email_template_name='data/data_password_reset_email.html',
+        post_reset_redirect=reverse('data:22q11_ibbc_login'))
+
+"""
+ Password Reset change page.
+"""
+def reset_confirm(request, uidb64=None, token=None):
+    return password_reset_confirm(request, template_name='data/data_password_reset_confirm.html',
+        uidb64=uidb64, token=token, post_reset_redirect=reverse('data:reset_complete'))
+
+"""
+ Password Reset change complete page.
+"""
+def reset_complete(request):
+    template = 'data/data_password_reset_complete.html'
+    return render(request, template)
+
 
 #####################################################################################################
 # Home page

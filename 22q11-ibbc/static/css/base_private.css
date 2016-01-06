@@ -396,3 +396,47 @@ width: 100%;
 display: block;
 position: relative;
 }
+
+#content-main-reset {
+padding: 40px;
+width: 400px;
+background-color: #F7F7F7;
+margin: 30px auto 10px;
+border-radius: 2px;
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+overflow: hidden;
+}
+
+#content-main-reset h1 {
+font-weight: 100;
+font-size: 1.5em;
+text-align: center;
+margin-bottom: 20px;
+}
+
+#content-main-reset p {
+font-weight: 100;
+margin-bottom: 20px;
+}
+
+#content-main-reset input[type=email] {
+height: 44px;
+font-size: 16px;
+width: 100%;
+margin-bottom: 10px;
+-webkit-appearance: none;
+background: #fff;
+border: 1px solid #d9d9d9;
+border-top: 1px solid #c0c0c0;
+/* border-radius: 2px; */
+padding: 0 8px;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+}
+
+#content-main-reset input[type=submit] {
+width: 100%;
+display: block;
+position: relative;
+margin: 10px auto;
+}

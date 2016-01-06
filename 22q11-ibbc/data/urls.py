@@ -12,6 +12,7 @@ from .views import Affymetrix_all_ListView, affymetrix_search_view, Affymetrix_s
 from .views import wgs, wgs_download
 from .views import Documents_1, Documents_2, Documents_3, Documents_4, Documents_5
 from .views import logout_view
+from .views import reset, reset_confirm, reset_complete
 
 urlpatterns = patterns('',
     # Home
@@ -53,4 +54,9 @@ urlpatterns = patterns('',
     # log on/off
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'data/data_login.html'}, name='22q11_ibbc_login'),
     url(r'^logout/$', logout_view, name='22q11_ibbc_logout'),
+
+    # password reset
+    url(r'^reset/$', reset, name='reset'),
+    url(r'^reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', reset_confirm, name='reset_confirm'),
+    url(r'^reset/complete/$', reset_complete, name='reset_complete'),
 )
