@@ -322,12 +322,45 @@ def wgs_download(request, file_name):
 ###################################################
 # Documents
 """
- Documents definition
+ Documents 1 definition
 """
 @login_required(login_url='data:22q11_ibbc_login')
-def Documents(request):
-    template = 'data/data_documents.html'
+def Documents_1(request):
+    template = 'data/data_documents_1.html'
     return render(request, template)
+
+"""
+ Documents 2 definition
+"""
+@login_required(login_url='data:22q11_ibbc_login')
+def Documents_2(request):
+    template = 'data/data_documents_2.html'
+    return render(request, template)
+
+"""
+ Documents 3 definition
+"""
+@login_required(login_url='data:22q11_ibbc_login')
+def Documents_3(request):
+    template = 'data/data_documents_3.html'
+    return render(request, template)
+
+"""
+ Documents 4 definition
+"""
+@login_required(login_url='data:22q11_ibbc_login')
+def Documents_4(request):
+    template = 'data/data_documents_4.html'
+    return render(request, template)
+
+"""
+ Documents 5 definition
+"""
+@login_required(login_url='data:22q11_ibbc_login')
+def Documents_5(request):
+    template = 'data/data_documents_5.html'
+    return render(request, template)
+
 
 ###################################################
 # Log in and out Pages

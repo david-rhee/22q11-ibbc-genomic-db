@@ -10,7 +10,7 @@ from .views import UserProfile_DetailView
 from .views import Subject_all_ListView, subject_search_view, Subject_search_ListView, Subject_site_ListView, Subject_DetailView
 from .views import Affymetrix_all_ListView, affymetrix_search_view, Affymetrix_search_ListView, Affymetrix_site_ListView, Affymetrix_DetailView, affymetrix_download
 from .views import wgs, wgs_download
-from .views import Documents
+from .views import Documents_1, Documents_2, Documents_3, Documents_4, Documents_5
 from .views import logout_view
 
 urlpatterns = patterns('',
@@ -44,7 +44,11 @@ urlpatterns = patterns('',
     url(r'^wgs/download/(\S+)/$', wgs_download , name='wgs_download'),
 
     # Documents
-    url(r'^documents/$', 'data.views.Documents', name='documents'),
+    url(r'^documents_1/$', 'data.views.Documents_1', name='documents_1'),
+    url(r'^documents_2/$', 'data.views.Documents_2', name='documents_2'),
+    url(r'^documents_3/$', 'data.views.Documents_3', name='documents_3'),
+    url(r'^documents_4/$', 'data.views.Documents_4', name='documents_4'),
+    url(r'^documents_5/$', 'data.views.Documents_5', name='documents_5'),
 
     # log on/off
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'data/data_login.html'}, name='22q11_ibbc_login'),

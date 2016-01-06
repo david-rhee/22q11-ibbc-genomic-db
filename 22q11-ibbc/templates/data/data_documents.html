@@ -6,21 +6,21 @@
 {% block content %}
 <div id='content-main'>
 
-    <div id='content-data-content'>
-        <div id='data-box'>
-        </div>
+    <div id='content-data-menu'>
+        <div id='content-data-menu-top'></div>
+        <ul class="subNav">
+            <li><a href="{% url 'data:documents_1' %}">Approved Ancillary Studies</a></li> |
+            <li><a href="{% url 'data:documents_2' %}">Approved Proposals</a></li> |
+            <li><a href="{% url 'data:documents_3' %}">Forms</a></li> |
+            <li><a href="{% url 'data:documents_4' %}">General Meeting Minutes</a></li> |
+            <li><a href="{% url 'data:documents_5' %}">Upcoming Meetings</a></li>
+        </ul>
     </div>
     
+    <div id='content-data-content'>
+        {% block content-data-content %}{% endblock content-data-content %}
+    </div>
+
 </div>
 {% endblock %}
 <!-- END CONTENT -->
-
-{% block scripts %}
-<!-- JQUERY -->
-<script type="text/javascript">
-jQuery( document ).ready(function($) {
-    $( 'a[href="/data/documents/"]' ).attr('id', 'active-page');
-});
-</script>
-<!-- End JQUERY -->
-{% endblock %}
