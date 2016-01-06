@@ -29,6 +29,8 @@
             {% else %}
             <input type="hidden" name="next" value="{{ next }}" />
             {% endif %}
+            </br>
+            <p><a href="{% url 'data:reset' %}">forgot password?</a></p>
         </div>
     </form>
 
