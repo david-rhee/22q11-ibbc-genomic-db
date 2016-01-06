@@ -56,7 +56,7 @@
                 <td class="tag-name"> Site Affymetrix </td><td class="tag-value"><a href="{% url "data:affymetrix_site_list" site.pk %}"> {{ affymetrixes|get_item:site.name }}</a> affymetrix data</td>
             </tr>
             <tr>
-                <td class="tag-name"> Affymetrix Data Folder </td><td class="tag-value"><a href="{% url "data:affymetrix_folder_download" site.folder %}"> Download </a> </td>
+                <td class="tag-name"> Affymetrix Data Folder </td><td class="tag-value"><a href="{% url "data:affymetrix_folder_download" site.folder site.pk %}"> Download </a> </td>
             </tr>
         </table>
 

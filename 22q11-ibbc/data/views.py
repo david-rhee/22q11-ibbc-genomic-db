@@ -64,12 +64,28 @@ def site_detail_view(request, **kwargs):
  Download for Affymetrix Folder.
 """
 @login_required(login_url='data:22q11_ibbc_login')
-def affymetrix_folder_download(request, file_name):
-    response = HttpResponse(mimetype='application/force-download')
-    response['Content-Disposition'] = 'attachment; filename=%s' % (file_name, )
-    response['X-Accel-Redirect'] = '/affymetrix_folder/%s' % (file_name, )    
-    return response
+def affymetrix_folder_download(request, file_name, site_pk):
+    flag = False    
+    site = Site.objects.get(id=site_pk)
 
+    # if user is one of PIs of owner site
+    if site.site_pis.all().filter(username=request.user.username):
+        flag = True
+    # if user is one of members of owner site
+    elif site.site_members.all().filter(username=request.user.username):
+        flag = True
+    # if user belongs to allowed users
+    elif site.allowed_users.all().filter(username=request.user.username):
+        flag = True
+
+    if flag == True:
+        response = HttpResponse(content_type='application/force-download')
+        response['Content-Disposition'] = 'attachment; filename=%s' % (file_name, )
+        response['X-Accel-Redirect'] = '/affymetrix_folder/%s' % (file_name, )    
+        return response
+ 
+    messages.error(request, 'You do NOT have permission to download, please contact the PI to gain access')
+    return redirect('data:home')
 
 #####################################################################################################
 #  UserProfile

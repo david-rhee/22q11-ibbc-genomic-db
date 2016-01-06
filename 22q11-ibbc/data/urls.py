@@ -19,7 +19,7 @@ urlpatterns = patterns('',
 
     # Site
     url(r'^site/(?P<pk>\d+)/$', site_detail_view, name='site_detail'),
-    url(r'^site/download/(\S+)/$', affymetrix_folder_download , name='affymetrix_folder_download'),
+    url(r'^site/download/(\S+)/(\S+)/$', affymetrix_folder_download , name='affymetrix_folder_download'),
 
     # UserProfile
     url(r'^user-profile/(?P<pk>\d+)/$', UserProfile_DetailView.as_view(), name='user_profile_detail'),
