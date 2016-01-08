@@ -85,7 +85,7 @@ class Subject(models.Model):
     owner_site = models.ForeignKey(Site, null=False, related_name="%(app_label)s_%(class)s_owner_site")
 
     def __unicode__(self):
-        return u"""{site_id}""".format(
+        return u"""{genomic_db_id}""".format(
             genomic_db_id=self.genomic_db_id,
         )
 
