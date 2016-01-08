@@ -22,7 +22,6 @@ Download packages
 
 Install pip packages using requirements
 
-	cd 22q11-ibbc-genomic-db/
 	pip install -r requirements.txt
 
 Export an environment key in .bashrc
@@ -34,9 +33,8 @@ Modify the following
 	settings/*
 	templates/data/data_documents_*
 
-Collect all static
+Collect all static - ensure nginx's static points to assets
 
 	python manage.py collectstatic --settings=22q11-ibbc.settings.local
-	** ensure nginx's static points to assets
 
-* change site name
+Change site name
