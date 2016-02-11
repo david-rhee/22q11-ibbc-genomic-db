@@ -355,7 +355,7 @@ def wgs(request):
 """
 @login_required(login_url='data:22q11_ibbc_login')
 def wgs_download(request, file_name):
-    response = HttpResponse(mimetype='application/force-download')
+    response = HttpResponse(content_type='application/force-download')
     response['Content-Disposition'] = 'attachment; filename=%s' % (file_name, )
     response['X-Accel-Redirect'] = '/wgs/%s' % (file_name, )    
     return response
